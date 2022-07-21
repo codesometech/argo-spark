@@ -17,7 +17,7 @@ apiVersion: "sparkoperator.k8s.io/v1beta2"
 kind: ScheduledSparkApplication
 metadata:
   name: spark-pi-scheduled
-  namespace: sparkoperator
+  namespace: spark-operator
 spec:
   schedule: "@every 3m"
   concurrencyPolicy: Allow
@@ -38,7 +38,7 @@ spec:
       memory: "512m"
       labels:
         version: 3.1.1
-      serviceAccount: my-release-spark
+      serviceAccount: spark-operator/my-release-spark
     executor:
       cores: 1
       instances: 1
